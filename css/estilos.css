@@ -23,6 +23,38 @@ valores */
 
 /* #portafolio  */
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ce8ae9');
+  src:  url('../fonts/icomoon.eot?ce8ae9#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ce8ae9') format('truetype'),
+    url('../fonts/icomoon.woff?ce8ae9') format('woff'),
+    url('../fonts/icomoon.svg?ce8ae9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
+
 :root {
   --greyDark: #1d252c;
   --greyLigth: #626262;
@@ -74,6 +106,7 @@ figure {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .hero-image {
   object-fit: cover;
@@ -92,6 +125,7 @@ figure {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .project-course,
 .project-date,
@@ -117,13 +151,15 @@ figure {
 }
 
 .project-details {
-  width: 500px;
+  width: 50%;
 }
 
 .project-imageContainer {
-  width: 500px;
+  width: 50%;
 }
-
+.project-imageContainer img {
+  max-width: 100%;
+}
 .header {
   background-color: var(--grey);
   color: white;
@@ -131,6 +167,7 @@ figure {
   justify-content: space-between;
   height: 70px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header a {
@@ -183,6 +220,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .footer img {
   vertical-align: middle;
@@ -200,8 +238,8 @@ ul {
   margin-left: 20px;
 }
 .event {
-  margin: 10px;
-  width: 480px;
+  margin: 1%;
+  width: 48%;
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -242,6 +280,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /* .social {
@@ -302,11 +341,221 @@ ul {
 }
 
 .wrapper {
-  width: 1000px;
+  max-width: 1000px;
+  /* width: 100%; */
+  flex: 1;
   margin: 0 auto;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
   height: inherit;
   flex-wrap: inherit;
+}
+.burger-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .8);
+  display: none;
+  line-height: 40px;
+  text-align: center;
+  position: fixed;
+  z-index: 4;
+  left: 5px;
+  top: 5px;
+  color:white;  
+  cursor: pointer;
+}
+/* Desktop first empezar desde el MQ mas grande*/
+@media screen and (max-width: 1023px) {
+  .portfolio {
+    padding: 0;
+  }
+  .wrapper {
+    padding: 0 1em;
+  }
+
+  .hero {
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+  }
+  .hero-image {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+
+  }
+  .event-list-title {
+    margin-left: 0;
+  }
+  h1 {
+    font-size: 2em;
+    z-index: 2;
+  }
+}
+.html-video {
+  width: 100%;
+  height: auto;
+  /* max-width: 100%; */
+}
+.youtube-video {
+  /* height: auto; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.flexible-video {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 1.2em;
+    margin: .5em 0;
+  }
+  .burger-button {
+    display: block;
+  }
+  .header {
+    display: block;
+    height: auto;
+  }
+  .header ol {
+    display: block;
+  }
+
+  .header ol li {
+    height: 50px;
+    text-align: center;
+  
+  }
+  .header a {
+    justify-content: center;
+    height: 40px;
+    font-size: 2em;
+    text-decoration: underline;
+    margin-bottom: .5em;
+  }
+
+  .header .logo {
+    text-align: center;
+  }
+
+  .menu {
+    position: fixed;
+    background: rgba(5,111,255, .9);
+    z-index: 3;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    bottom: 0;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+  }
+  .menu.is-active {
+    left: 0;
+  }
+
+  .project {
+    display: block;
+  }
+  .project-imageContainer{
+    width: auto;
+    text-align: center;
+  }
+  .project-details {
+    width: auto;
+    /* font-size: 10px; */
+  }
+  .project-course, .project-date, .project-url {
+    margin: .3em 0;
+  }
+  .project-title {
+    font-size: 1.5em;
+    margin-bottom: .3em;
+  }
+  .project-url {
+    font-size: 1em;
+  }
+  .project-course {
+    font-size: .7em;
+
+  }
+  .project-date {
+    font-size: 1em;
+  }
+  .project-description {
+    font-size: 1em;
+  }
+  .event {
+    width: auto;
+    flex-shrink: initial;
+  }
+  .event img {
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .project-details {
+    /* width: auto; */
+    font-size: 14px;
+  }
+  .event-detail {
+    margin: -2em .5em .5em;
+    padding: 1em;
+  }
+  .contact {
+    height: auto;
+    padding: 1.5em 0;
+    text-align: center;
+    display: block;
+  }
+  .form-email button {
+    margin: 1em auto;
+  }
+
+  .form-email h3 {
+    margin-top: 0;
+  }
+
+  .footer {
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .social-link {
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.2em;
+    /* background: rgba(0,0,0,.5); */
+  }
+  .hero {
+    padding: 2em 1em;
+  }
 }

@@ -7,9 +7,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans:wght@300&family=Pacifico&family=Patrick+Hand&display=swap"
     rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/media.css" media="screen and (max-width:768px)"> -->
   <link rel="stylesheet" href="css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1 " />
 </head>
 <body>
+  <i class="icon-menu burger-button" id="burguer-button"></i>
   <header class="header">
     <div class="wrapper">
       <figure class="logo">
@@ -39,7 +42,7 @@
       </h1>
       <img class="hero-image" src="images/hero.jpg" width="500" height="300" alt="Hero"/> 
     </div>
-  </section>
+  </section> 
   <section id="portafolio" class="portfolio">
     <div class="wrapper">
       <h2>Portafolio (Proyectos Destacados)</h2>
@@ -97,7 +100,10 @@
       </article>
       <article class="event">
         <figure class="event-imageContainer">
-          <img class="event-image" src="images/platzi-conf.jpg" width="500" height="300" />
+          <div class="flexible-video">
+            <iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/m05IDA3foQY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <!-- <img class="event-image" src="images/platzi-conf.jpg" width="500" height="300" /> -->
         </figure>
         <div class="event-detail">
           <h3 class="event-title">PlatziConf México 2018</h3>
@@ -110,7 +116,9 @@
       </article>
       <article class="event">
         <figure class="event-imageContainer">
-          <img class="event-image" src="images/platzi-conf.jpg" width="500" height="300" />
+          <video class="html-video" src="videos/f8.mp4" width="1280" height="720" controls>
+          </video>
+          <!-- <img class="event-image" src="images/platzi-conf.jpg" width="500" height="300" /> -->
         </figure>
         <div class="event-detail">
           <h3 class="event-title">PlatziConf México 2018</h3>
@@ -143,7 +151,7 @@
         <input id="email" type="text" placeholder="Déjame tu email">
         <button>Enviar</button>
       </form>
-      <div class="socila">
+      <div class="social">
         <a href="#" class="social-link twitter"></a>
         <a href="#" class="social-link facebook"></a>
         <a href="#" class="social-link github"></a>
@@ -157,10 +165,11 @@
         <p>Curso de desarrollo web online 2018 <img src="images/platzi.png" width="80" alt="platzi"></p>
       </div>
       <div>
-        <p>Designes wit <\3 by<a href="https://instagram.com/alejo_319">@alejo_319</a></p>
+        <p>Designes with ❤️ by <a href="https://instagram.com/alejo_319">@alejo_319</a></p>
       </div>
     </div>
   </footer>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
